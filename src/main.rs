@@ -9,7 +9,7 @@ fn main() {
 fn abci() -> bool{
 
     let cb = tendermint_abci::ClientBuilder::default();
-    let mut conn = cb.connect("localhost:26658").expect("Connected to server");
+    let mut conn = cb.connect("tcp://127.0.0.1:26658").expect("Connected to server");
     // let info = conn.?;
     // println!("info: {:?}", info.last_block_height);
     match conn.list_snapshots() {
